@@ -1,0 +1,12 @@
+FROM mhart/alpine-node:6.1.0
+MAINTAINER Ross Hendry "rhendry@googlemail.com"
+
+RUN mkdir -p /opt/apps/orders-service
+ADD . /opt/apps/orders-service
+WORKDIR /opt/apps/orders-service
+
+RUN npm install -g nodemon
+RUN npm install
+
+EXPOSE 8100
+CMD ["nodemon", "bin/www"]

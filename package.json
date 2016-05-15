@@ -1,0 +1,23 @@
+{
+  "name": "ace-order-api",
+  "version": "1.0.0",
+  "description": "REST service for Ace orders",
+  "main": "server.js",
+  "scripts": {
+    "style": "jscs --fix app/ bin/ server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "forever bin/www"
+  },
+  "author": "Ross Hendry (rhendry@googlemail.com)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "forever": "^0.15.1",
+    "sprintf": "^0.1.5",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  }
+}

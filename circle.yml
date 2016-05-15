@@ -1,0 +1,13 @@
+machine:
+  services:
+    - docker
+  node:
+    version: 5.7.0
+
+deployment:
+  tutum:
+    branch: master
+    commands:
+      - docker build -t chooban/ace-orders-api .
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
+      - docker push chooban/ace-orders-api:latest
