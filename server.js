@@ -5,7 +5,7 @@ var orderRoutes = require('./app/routes');
 
 var app = express();
 app.use(bodyParser.json());
-app.use('/order', orderRoutes);
+app.use('/orders', orderRoutes);
 
 // Catch 404 and forward to error handler
 app.use(function (req, res, next) {
