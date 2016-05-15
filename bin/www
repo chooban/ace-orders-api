@@ -4,7 +4,7 @@ var app = require('../server');
 var logger = require('../app/util/logger');
 var http = require('http');
 
-var port = normalizePort(process.env.PORT || '8100');
+var port = normalizePort(process.env.PORT || '8101');
 app.set('port', port);
 
 var server = http.createServer(app);
