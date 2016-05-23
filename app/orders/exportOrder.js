@@ -1,5 +1,3 @@
-'use strict';
-
 const sprintf = require('sprintf');
 const util = require('util');
 const logger = require('../util/logger');
@@ -28,6 +26,4 @@ module.exports = (req, res, next) => {
   res.setHeader("Pragma", "no-cache");
   res.setHeader("Expires", "0");
   res.send(csv);
-
-  logger.debug("Sent back order: " + csv);
 }
