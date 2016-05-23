@@ -5,7 +5,31 @@ const headers = 'Previews Code,Quantity,Title,Price,Publisher,Comment\n';
 const row = '%s,%d,%s,%s,%s,%s\n';
 
 module.exports = (req, res, next) => {
-  const order = JSON.parse(req.body.encodeddata);
+  const order = undefined;
+
+  console.log("Foo: " + util.inspect(req.body));
+  if (!req.body.encodeddata) {
+    console.log("A");
+    console.log("Foo: " + req.body);
+    return next({ status: 400, message: "Invalid request"});
+  }
+
+  try {
+    order = JSON.parse(req.body.encodeddata);
+  } catch (err) {
+    console.log("B");
+    console.log("Foo: " + req.body);
+    return next({ status: 400, message: "Invalid request"});
+  }
+
+  if (!order.line_items || !order.line_items.length) {
+    console.log("C");
+    return next({
+      status: 422,
+      message: "No order details found in request"
+    });
+  }
+
   let csv = headers;
 
   for (let i = 0; i < order.line_items.length; i++) {
