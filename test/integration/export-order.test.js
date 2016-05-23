@@ -30,11 +30,14 @@ describe('Export controller', function() {
   });
 
   it('Handles empty order requests gracefully', function(done) {
+    const emptyOrder = {
+      total: 600 
+    }
     supertest(server)
       .post('/orders/export')
       .type('form')
       .send({
-        encodeddata: JSON.stringify({})
+        encodeddata: JSON.stringify(emptyOrder)
       })
       .end(function(err, res) {
         res.status.should.equal(422);
