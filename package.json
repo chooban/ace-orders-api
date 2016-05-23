@@ -6,7 +6,8 @@
   "scripts": {
     "style": "jscs --fix app/ bin/ server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "forever bin/www"
+    "start": "forever bin/www",
+    "devstart": "nodemon bin/www"
   },
   "author": "Ross Hendry (rhendry@googlemail.com)",
   "license": "ISC",

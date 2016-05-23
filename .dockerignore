@@ -1,6 +1,7 @@
-circle.yml
-.jscsrc
-.gitignore
-.docker-compose.yml
-README.md
-node_modules/
+*
+!app/
+!bin/
+!nodemon.json
+!package.json
+!README.md
+!server.js
