@@ -6,23 +6,22 @@
   "scripts": {
     "style": "jscs --fix app/ bin/ server.js",
     "test": "mocha --recursive",
-    "start": "forever bin/www",
+    "start": "node ./bin/www",
     "devstart": "nodemon bin/www"
   },
   "author": "Ross Hendry (rhendry@googlemail.com)",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.1",
-    "express": "^4.13.4",
-    "forever": "^0.15.1",
-    "sprintf": "^0.1.5",
-    "winston": "^2.2.0"
+    "body-parser": "1.15.1",
+    "express": "4.13.4",
+    "sprintf": "0.1.5",
+    "winston": "2.2.0"
   },
   "devDependencies": {
-    "mocha": "^2.5.1",
-    "nodemon": "^1.9.2",
-    "should": "^8.4.0",
-    "supertest": "^1.2.0",
-    "winston-null": "^1.0.2"
+    "mocha": "3.2.0",
+    "nodemon": "1.9.2",
+    "should": "11.2.1",
+    "supertest": "3.0.0",
+    "winston-null": "1.0.2"
   }
 }
